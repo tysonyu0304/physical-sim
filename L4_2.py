@@ -36,12 +36,11 @@ while True:
     ball.pos += ball.v*dt  
     t += dt
 
-    if ball.v.x > 0 and ball.v.x + ball.a.x*dt < 0: # 右端點
+    if ball.v.x > 0 and ball.v.x + ball.a.x*dt < 0 and run == False: # 右端點
         right2 = right1
         right1 = t
         run = True
-    
-    if run:
-        time = abs(right1 - right2)
-        print(f"Simulated period = {time}, Theoretical period = {2*pi*sqrt(L/g)}")
-        run = False
+    elif ball.v.x > 0 and ball.v.x + ball.a.x*dt < 0 and run == True:
+        print(f"Simulated period = {t - right1}, Theoretical period = {2*pi*sqrt(L/g)}")
+        right2 = right1
+        right1 = t
