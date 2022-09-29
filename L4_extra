@@ -1,4 +1,3 @@
-
 from vpython import *
 
 g = 9.8                 #重力加速度 9.8 m/s^2
