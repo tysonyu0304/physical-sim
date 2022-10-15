@@ -22,8 +22,9 @@ while True:
     ball.a = F/m
     ball.v += ball.a*dt
     ball.pos += ball.v*dt
-    
+
     F_vec = ball.v.rotate(angle=3*pi/2)  
+
     F = 4.0*F_vec/mag(F_vec)
 
     if ball.v.x >= 0 and ball.v.x + F.x/m*dt < 0:    
