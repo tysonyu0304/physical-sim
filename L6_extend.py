@@ -1,5 +1,6 @@
 from vpython import *
 import random
+import os
 
 dt = 0.01 #時間間隔 0.01 秒
 run = False
@@ -49,16 +50,17 @@ class ball():
         reset = False
 
     def pos_ganerater(self):
-        x = random.uniform(-self.s2/2, self.s2/2)
-        y = random.uniform(-self.s2/2, self.s2/2)
-        z = random.uniform(-self.s2/2, self.s2/2)
+        x = random.uniform(-((self.s2/2 - self.thk)), ((self.s2/2 - self.thk)))
+        y = random.uniform(-((self.s2/2 - self.thk)), ((self.s2/2 - self.thk)))
+        z = random.uniform(-((self.s2/2 - self.thk)), ((self.s2/2 - self.thk)))
         return vec(x, y, z)
 
     def v_ganerater(self):
         x = random.uniform(-2, 2)
         y = random.uniform(-2, 2)
         z = random.uniform(-2, 2)
-        return vec(x, y, z)
+        v = vec(x, y, z)
+        return v/mag(v)*2
 
     def ball_ganerater(self):
         for i in range(self.num):
@@ -123,3 +125,4 @@ while not end:
         Ball.init()
 
 print("end")
+os._exit(0)
