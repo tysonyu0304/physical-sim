@@ -50,6 +50,7 @@ class ball():
         self.b_n_apply.delete()
         self.b_text.text = ""
         self.trail.text = ""
+        self.v_text = ""
         self.b_text.delete()
         self.trail.delete()
         self.b_mtrail.delete()
@@ -57,6 +58,8 @@ class ball():
         self.b_reset.delete()
         self.b_end.delete()
         self.scene.delete()
+        self.v_slide.delete()
+        self.v_apply.delete()
         self.start()
         reset = False
 
