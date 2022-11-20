@@ -91,7 +91,7 @@ class ball():
                 #若兩球球心距離小於兩倍球半徑，則代入碰撞公式改變速度
                 if mag(self.ball[i].pos - self.ball[j].pos) < 2*self.size :
                     self.ball[i].v, self.ball[j].v = self.collision(self.ball[i].v, self.ball[j].v, self.ball[i].pos, self.ball[j].pos)
-                    print("Hit!")
+                    # print("Hit!")
                 
     def btw_collision(self):
         for i in self.ball:
